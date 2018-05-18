@@ -1,0 +1,33 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: sc-ps-service
+# 连接数据库
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springclouddata?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123
+# jpa配置
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect   
+#整合Spring Security实现访问API页面输入用户名密码           
+security:
+  basic:
+    path: /swagger-ui.html
+    enabled: false
+  user:
+    name: lvjh
+    password: 123456           
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

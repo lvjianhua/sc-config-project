@@ -1,0 +1,28 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: sc-ps-api
+#自定义负载均衡,不需要可注释
+#spring-cloud-provider:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: org.lvjh.cloud.config.MyRule    
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  
+#整合Spring Security实现访问API页面输入用户名密码 ,enabled:true开启        
+security:
+  basic:
+    path: /swagger-ui.html
+    enabled: false
+  user:
+    name: lvjh
+    password: 123456   
+ 
