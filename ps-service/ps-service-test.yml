@@ -3,13 +3,13 @@ server:
 spring:
   application:
     name: sc-ps-service
-# Á¬½ÓÊı¾İ¿â
+# è¿æ¥æ•°æ®åº“
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springclouddata?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123
-# jpaÅäÖÃ
+# jpaé…ç½®
   jpa:
     database: MYSQL
     show-sql: true
@@ -19,7 +19,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect   
-#ÕûºÏSpring SecurityÊµÏÖ·ÃÎÊAPIÒ³ÃæÊäÈëÓÃ»§ÃûÃÜÂë           
+#æ•´åˆSpring Securityå®ç°è®¿é—®APIé¡µé¢è¾“å…¥ç”¨æˆ·åå¯†ç            
 security:
   basic:
     path: /swagger-ui.html

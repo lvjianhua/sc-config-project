@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: sc-ps-api
-#×Ô¶¨Òå¸ºÔØ¾ùºâ,²»ĞèÒª¿É×¢ÊÍ
+#è‡ªå®šä¹‰è´Ÿè½½å‡è¡¡,ä¸éœ€è¦å¯æ³¨é‡Š
 #spring-cloud-provider:
 #  ribbon:
 #    NFLoadBalancerRuleClassName: org.lvjh.cloud.config.MyRule    
@@ -17,7 +17,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/  
-#ÕûºÏSpring SecurityÊµÏÖ·ÃÎÊAPIÒ³ÃæÊäÈëÓÃ»§ÃûÃÜÂë ,enabled:true¿ªÆô        
+#æ•´åˆSpring Securityå®ç°è®¿é—®APIé¡µé¢è¾“å…¥ç”¨æˆ·åå¯†ç  ,enabled:trueå¼€å¯        
 security:
   basic:
     path: /swagger-ui.html
