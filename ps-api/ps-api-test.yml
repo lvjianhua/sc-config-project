@@ -23,7 +23,7 @@ eureka:
 security:
   basic:
     path: /swagger-ui.html
-    enabled: false
+    enabled: true
   user:
     name: lvjh
     password: 123456   
