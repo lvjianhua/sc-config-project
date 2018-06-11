@@ -15,10 +15,7 @@ hystrix:
       execution:
         timeout:
           enabled: false
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/  
+
 #整合Spring Security实现访问API页面输入用户名密码 ,enabled:true为开启        
 security:
   basic:
