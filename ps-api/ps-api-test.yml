@@ -4,11 +4,8 @@ server:
     uri-encoding: UTF-8  
 spring:
   application:
-    name: sc-ps-api
-#自定义负载均衡,不需要可注释
-#spring-cloud-provider:
-#  ribbon:
-#    NFLoadBalancerRuleClassName: org.lvjh.cloud.config.MyRule    
+    name: sc-ps-api 
+       
 hystrix:
   command:
     default:
@@ -17,11 +14,10 @@ hystrix:
           enabled: false
 
 #整合Spring Security实现访问API页面输入用户名密码 ,enabled:true为开启        
-security:
-  basic:
-    path: /swagger-ui.html
-    enabled: false
-  user:
-    name: lvjh
-    password: 123456   
- 
+#security:
+#  basic:
+#    path: /swagger-ui.html
+#    enabled: false
+#  user:
+#    name: lvjh
+#    password: 123456
