@@ -55,7 +55,7 @@ management:
 
 security:
   basic:
-    enabled: ture
+    enabled: true
   oauth2:
     resource:
       jwt:
