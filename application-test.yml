@@ -55,7 +55,7 @@ management:
 
 security:
   basic:
-    enabled: true
+    enabled: false
   oauth2:
     resource:
       jwt:
