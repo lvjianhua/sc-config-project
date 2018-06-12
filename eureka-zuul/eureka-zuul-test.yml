@@ -51,7 +51,7 @@ security:
           -----END PUBLIC KEY-----
       id: openid
       serviceId: ${PREFIX:}resource   
-# 配置Eureka中的serviceId列表，表明监控哪些服务
+
 turbine:
   aggregator:
     clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
