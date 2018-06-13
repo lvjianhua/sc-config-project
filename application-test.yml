@@ -20,7 +20,7 @@ spring:
     max-idle: 8
     max-wait: -1
     min-idle: 0
-    password: lvjianhua
+    password: 
     prot: 6379
 hystrix:
   command:
