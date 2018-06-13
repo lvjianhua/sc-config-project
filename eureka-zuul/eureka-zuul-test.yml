@@ -5,15 +5,9 @@ spring:
     auto: true
   session:
     store-type: redis
-  redis:
-    database: 1
-    host: localhost
-    max-active: 8
-    max-idle: 8
-    max-wait: -1
-    min-idle: 0
-    password: lvjianhua
-    prot: 6379
+    redis: 
+      namespace: zuul-
+      flush-mode: IMMEDIATE
 
 eureka:
   instance: 
