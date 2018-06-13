@@ -8,8 +8,6 @@ spring:
     redis: 
       namespace: zuul-
       flush-mode: IMMEDIATE
-  redis: 
-    database: 2 # database name 
 
 eureka:
   instance: 
