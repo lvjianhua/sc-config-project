@@ -1,6 +1,5 @@
 spring:
-  profiles: 
-    active: test
+  profiles: test
   thymeleaf.cache: false
   aop:
     auto: true
