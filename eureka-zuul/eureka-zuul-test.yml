@@ -6,7 +6,7 @@ spring:
   session:
     store-type: redis
     redis: 
-      namespace: auth-
+      namespace: zuul-
       flush-mode: IMMEDIATE
   redis: 
     database: 2 # database name 
@@ -76,11 +76,4 @@ zuul:
       sensitiveHeaders: #会过滤客户端附带的headers                                
       path: /api/ps/**
       stripPrefix: false
-  add-proxy-headers: true  
-  
-zuulprop: 
-  loginAccessUrl: login
-  allowOrigin: localhost,172.16.4.61
-  oAuthTimes: 5  
-  scheme: http        
-         
+  add-proxy-headers: true           
