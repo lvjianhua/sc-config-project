@@ -79,7 +79,7 @@ zuul:
   add-proxy-headers: true  
   
 zuulprop: 
-  loginAccessUrl: 
+  loginAccessUrl: login
   allowOrigin: localhost,172.16.4.61
   oAuthTimes: 5  
   scheme: http        
