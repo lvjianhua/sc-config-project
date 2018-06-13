@@ -1,8 +1,7 @@
 server:
   port: 9002
-  tomcat:
-    uri-encoding: UTF-8  
 spring:
+  profiles: test
   application:
     name: ps-service
 # 连接数据库
