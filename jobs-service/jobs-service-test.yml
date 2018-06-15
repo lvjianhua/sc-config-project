@@ -1,0 +1,14 @@
+spring:
+  profiles: test
+  thymeleaf.cache: false
+  aop:
+    auto: true
+
+server:
+  port: 14000
+  tomcat:
+    uri-encoding: UTF-8
+eureka:
+  instance: 
+    preferIpAddress: true
+    nonSecurePort: 14000
