@@ -20,11 +20,19 @@ server:
   port: 9100
   # Use different context-path to avoid session cookie overlapping
   context-path: /uaa
-  use-forward-headers: false
+  use-forward-headers: true
   session: 
     cookie: 
       name: sc-au
- 
+  
+security:
+  basic:
+    enabled: false
+  user:
+    name: lvjh
+    password: 123456
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+  
 logging:
   level.org.springframework.security: DEBUG
  
