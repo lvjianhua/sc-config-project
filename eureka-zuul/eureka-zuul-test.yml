@@ -75,4 +75,8 @@ zuul:
       sensitiveHeaders: #会过滤客户端附带的headers                                
       path: /api/ps/**
       stripPrefix: false
+    oauth-server:
+      sensitiveHeaders:
+      path: /uaa/**
+      stripPrefix: false      
   add-proxy-headers: true           
