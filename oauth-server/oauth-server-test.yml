@@ -20,7 +20,7 @@ server:
   port: 9100
   # Use different context-path to avoid session cookie overlapping
   context-path: /uaa
-  use-forward-headers: true
+  use-forward-headers: false
   session: 
     cookie: 
       name: sc-au
