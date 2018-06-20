@@ -28,9 +28,6 @@ server:
 security:
   basic:
     enabled: false
-#  user:
-#    name: dwb
-#    password: 123456
   ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   
 logging:
