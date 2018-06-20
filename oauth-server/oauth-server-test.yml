@@ -26,8 +26,6 @@ server:
       name: sc-au
   
 security:
-  basic:
-    enabled: false
   ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   
 logging:
