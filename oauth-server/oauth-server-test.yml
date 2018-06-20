@@ -24,10 +24,7 @@ server:
   session: 
     cookie: 
       name: sc-au
-  
-security:
-  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
-  
+ 
 logging:
   level.org.springframework.security: DEBUG
  
