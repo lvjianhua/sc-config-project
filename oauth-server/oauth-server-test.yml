@@ -35,6 +35,14 @@ security:
   
 logging:
   level.org.springframework.security: DEBUG
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
  
 authprop: 
   allowOrigin: localhost,172.16.4.63
