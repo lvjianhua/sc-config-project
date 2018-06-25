@@ -22,8 +22,8 @@ server:
       name: sc-az
 
 ribbon:
-  ReadTimeout: 15000
-  ConnectTimeout: 15000
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 1      
 
