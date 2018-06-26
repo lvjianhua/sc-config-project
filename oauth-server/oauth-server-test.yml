@@ -34,12 +34,4 @@ security:
   ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   
 logging:
-  level.org.springframework.security: DEBUG
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
+  level.org.springframework.security: DEBUG        
