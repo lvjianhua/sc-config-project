@@ -31,7 +31,7 @@ ribbon:
 zuul: 
   routes: 
     ps-api:       
-      sensitiveHeaders: #会过滤客户端附带的headers                                
+      sensitiveHeaders:                               
       path: /api/ps/**
       stripPrefix: false  
     auth-server:
@@ -81,7 +81,7 @@ hystrix:
             
 zuulprop: 
   loginAccessUrl: 
-  allowOrigin: .gfresh.cn,//gfresh.cn,localhost,.igfresh.com
+  allowOrigin: localhost
   oAuthTimes: 5  
   scheme: http
   
