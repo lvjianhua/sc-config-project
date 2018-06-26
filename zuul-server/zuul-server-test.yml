@@ -1,0 +1,87 @@
+spring:
+  profiles: test
+  thymeleaf.cache: false
+  aop:
+    auto: true
+  session:
+    store-type: redis
+    redis: 
+      namespace: zuul-
+      flush-mode: IMMEDIATE    
+  redis: 
+    database: 2 # database name 
+    
+eureka:
+  instance: 
+    preferIpAddress: true
+    nonSecurePort: 9000
+# Define the port where the API gateway server would be running
+server:
+  port: 9000
+  session: 
+    cookie: 
+      name: gfresh-az
+      
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  
+zuul: 
+  routes: 
+    ps-api:       
+      sensitiveHeaders: #会过滤客户端附带的headers                                
+      path: /api/ps/**
+      stripPrefix: false  
+    auth-server:
+      sensitiveHeaders:
+      path: /uaa/**
+      stripPrefix: false
+  add-proxy-headers: true
+
+security:
+  # Disable Spring Boot basic authentication
+  basic:
+    enabled: false
+  oauth2:
+    sso:
+      loginPath: /login
+    client:
+      accessTokenUri: http://localhost:${server.port}/uaa/oauth/token
+      userAuthorizationUri: /uaa/oauth/authorize
+      clientId: retailstore
+      clientSecret: retailStoreSecret
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
+          -----END PUBLIC KEY-----
+      id: openid
+      serviceId: ${PREFIX:}resource
+
+logging:
+  level.org.springframework.security: DEBUG
+turbine:
+  aggregator:
+    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
+  appConfig: SAMPLE-HYSTRIX-AGGREGATE
+management:
+  security:
+    enabled: false
+hystrix:
+  threadpool: 
+    default: 
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 150000
+        rollingPercentile:
+          numBuckets: 10      
+            
+zuulprop: 
+  loginAccessUrl: 
+  allowOrigin: .gfresh.cn,//gfresh.cn,localhost,.igfresh.com
+  oAuthTimes: 5  
+  scheme: http
+  
