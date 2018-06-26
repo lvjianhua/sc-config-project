@@ -1,0 +1,45 @@
+spring:
+  profiles: test
+  thymeleaf.cache: false
+  aop:
+    auto: true
+  session:
+    store-type: redis
+    redis: 
+      namespace: auth-
+      flush-mode: IMMEDIATE
+  redis: 
+    database: 2 # database name 
+    
+eureka:
+  instance: 
+    preferIpAddress: true
+    nonSecurePort: 9100
+# Define the port where the UAA server would be running
+server:
+  port: 9100
+  # Use different context-path to avoid session cookie overlapping
+  context-path: /uaa
+  use-forward-headers: true
+  session: 
+    cookie: 
+      name: gfresh-au
+  
+security:
+  basic:
+    enabled: false
+  user:
+    name: lvjh
+    password: 123456
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+  
+logging:
+  level.org.springframework.security: DEBUG
+ 
+authprop: 
+  allowOrigin: localhost
+  zuulIp: localhost
+  zuulPort: 9000
+  zuulDns: localhost
+  scheme: http
+  
