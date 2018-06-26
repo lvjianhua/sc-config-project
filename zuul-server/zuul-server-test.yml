@@ -27,8 +27,7 @@ ribbon:
   ConnectTimeout: 15000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 1
-  eureka:
-    enabled: false  
+  
 zuul: 
   routes: 
     ps-api:       
