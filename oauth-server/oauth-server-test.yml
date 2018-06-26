@@ -42,12 +42,4 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
- 
-authprop: 
-  allowOrigin: localhost,172.16.4.63
-  zuulIp: localhost
-  zuulPort: 5000
-  zuulDns: localhost
-  scheme: http
-  
+            timeoutInMilliseconds: 60000
