@@ -9,7 +9,12 @@ spring:
     redis: 
       namespace: zuul-
       flush-mode: IMMEDIATE
-
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      location: /tmp/upload
 eureka:
   instance: 
     preferIpAddress: true
@@ -19,11 +24,11 @@ server:
   port: 5000
   session: 
     cookie: 
-      name: sc-az
+      name: gfresh-az
 
 ribbon:
   ReadTimeout: 60000
-  ConnectTimeout: 3000
+  ConnectTimeout: 60000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 1      
 
@@ -76,6 +81,17 @@ hystrix:
  
 #分发各个链接至各个不同的微服务Api  
 zuul: 
+  hystrix:
+    threadpool:
+      coreSize: 10
+      maxQueueSize: -1
+      queueSizeRejectionThreshold: 5
+      keepAliveTimeMinutes: 1
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 100000
+        rollingPercentile:
+          numBuckets: 10
   routes: 
     ps-api:       
       sensitiveHeaders: #会过滤客户端附带的headers                                

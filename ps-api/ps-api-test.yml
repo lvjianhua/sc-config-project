@@ -1,22 +1,21 @@
 server:
   port: 9001
+  tomcat:
+    uri-encoding: UTF-8  
 spring:
   profiles: test
+  thymeleaf.cache: false
+  aop:
+    auto: true
+  session:
+    store-type: redis
+  redis:
+    database: 2 # database name  
   application:
     name: ps-api 
        
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false
-
-#整合Spring Security实现访问API页面输入用户名密码 ,enabled:true为开启        
-#security:
-#  basic:
-#    path: /swagger-ui.html
-#    enabled: false
-#  user:
-#    name: lvjh
-#    password: 123456
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1 

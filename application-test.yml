@@ -76,5 +76,5 @@ server:
     maxThreads: 100
   session:
     cookie: 
-      name: sc-session          
+      name: gfresh-session          
     
